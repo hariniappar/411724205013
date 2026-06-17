@@ -1,0 +1,108 @@
+/* p{
+    font-sixe:xx-larger;
+    font-weight:bolder;
+} */
+/* box model */
+h1{
+    padding: 20px;
+    border: 20px solid black;
+    margin: 20px;
+}
+ video{
+    width: 100%;
+    height: auto;
+ }
+ #p1{
+    font-weight: 600;
+ }
+ nav{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+ }
+ ol{
+    list-style-type:lower-roman ;
+ }
+ ul{
+    list-style-type: square; ;
+ }
+ table,th,td{
+    border:1px solid:black;
+    border-collapse:collapse;
+ }
+ button{
+    background-color: red;
+    border-radius:300px
+    margin: 20 px;
+ }
+ button:hover{
+    background-color: greenyellow;
+ }
+ form{
+    height:500px;
+    width:30%;
+    background-color:gray;
+    padding: 50px;
+ }
+
+#one{
+    grid-row:1/2;
+    background-color: antiquewhite;
+    height:50px ;
+}
+#two{
+    grid-row:1/2;
+    background-color: brown;
+    height:50px ;
+}
+#three{
+    grid-row:1/2;
+    background-color: aqua;
+    height:50px ;
+}
+#four{
+    grid-row:1/2;
+    background-color: blue;
+    height:50px ;
+}
+.festival3{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+img{
+    height: 500px;
+    width:500px;
+    background-color: blueviolet;
+    /* border-radius:500px; */
+    padding:100px;
+}
+/* @media(max-width:600px){
+   img{
+    height: auto;
+    width:100%;
+     background-color: aqua;
+     border-radius: 200px; 
+     padding:100px;  
+ }  
+}  */
+nav{
+   display: flex;
+   flex-direction:column;
+  }
+  .grid{
+    display:grid;
+   /* width:100%;
+    grid-template-columns: 50% 50% 50% 50%; */
+}
+@media (min-width:1024){
+   nav{
+      display: flex;
+      flex-direction: row;
+      gap:50px;
+   }
+   .grid{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 50% 50% 50%;
+   }
+  }
