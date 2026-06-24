@@ -1,29 +1,27 @@
-console.log("hello")
-const first=1;
-const second=2;
-console.log(first);
-const str="hariniappar";
-console.log(str);
-const colour=["blue","green","white"]
-console.log(colour[0])
-colour[1]="black"
-console.log(colour[1])
-const arr=["name",1,false,2.4]
-console.log(arr)
-for(let i=0;i<arr.length;i++){
-    console.log(arr[i])
-}
-const a=document.getElementById("ptag")
-a.innerHTML="this my fourth class"
-function abs(){
-    console.log("I am writing something")
-}
-const input = document.getElementById("eventlistener")
-const output = document.getElementById("Ptag")
-input.addEventListener("input", ()=>{
-    output.textContent = input.value
-})
-const newvar=document.createElement("h1")
-newvar.textContent="new paragraph";
-document.body.appendChild(newvar);
-newvar.remove()
+document.getElementById("loadBtn").addEventListener("click", () => {
+  const statusDiv = document.getElementById("status");
+  const usersDiv = document.getElementById("users");
+  statusDiv.textContent = "Loading...";
+  usersDiv.innerHTML = "";
+  setTimeout(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(user => {
+          const card = document.createElement("div");
+          card.className = "user-card";
+          card.innerHTML = `
+            <h3>${user.name}</h3>
+            <p>Email: ${user.email}</p>
+            <p>Phone: ${user.phone}</p>
+          `;
+          usersDiv.appendChild(card);
+        });
+        statusDiv.textContent = "Loaded successfully!";
+      })
+      .catch(error => {
+        statusDiv.textContent = "Error loading data";
+        console.error(error);
+      });
+  }, 2000); 
+});
